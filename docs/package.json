@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "智能表单预测系统 - 项目文档",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
@@ -10,8 +11,8 @@
     "clean": "rimraf dist .vitepress/cache"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0",
-    "vue": "^3.3.0",
-    "rimraf": "^5.0.0"
+    "vitepress": "^1.0.0-rc.44",
+    "vue": "^3.4.21",
+    "rimraf": "^5.0.5"
   }
 }
