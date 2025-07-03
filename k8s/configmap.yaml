@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: smart-form-config
+  namespace: smart-form-prediction
+data:
+  NODE_ENV: "production"
+  FRONTEND_PORT: "3000"
+  BACKEND_PORT: "3001"
+  CORS_ORIGIN: "http://smart-form-frontend-service:3000"
+  DATA_PATH: "/app/data"

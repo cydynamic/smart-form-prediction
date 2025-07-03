@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: smart-form-data-pv
+  labels:
+    app: smart-form-prediction
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: /data/smart-form-prediction
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: smart-form-data-pvc
+  namespace: smart-form-prediction
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: manual

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-form-frontend
+  namespace: smart-form-prediction
+  labels:
+    app: smart-form-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: smart-form-frontend
+  template:
+    metadata:
+      labels:
+        app: smart-form-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: smart-form-frontend:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: smart-form-config
+                  key: NODE_ENV
+            - name: REACT_APP_API_URL
+              value: "http://smart-form-backend-service:3001"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"

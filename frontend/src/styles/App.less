@@ -1,0 +1,348 @@
+// 应用布局样式
+.app-layout {
+  height: 100vh;
+  background: #f0f2f5;
+
+  .ant-layout-header {
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    z-index: 100;
+    position: relative;
+  }
+
+  .ant-layout-sider {
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
+    z-index: 99;
+
+    .ant-layout-sider-trigger {
+      background: #f0f0f0;
+      color: #666;
+
+      &:hover {
+        background: #e6f7ff;
+        color: #1890ff;
+      }
+    }
+  }
+
+  .content-layout {
+    margin: 16px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+    .main-content {
+      padding: 24px;
+      min-height: calc(100vh - 64px - 32px);
+      overflow-y: auto;
+    }
+  }
+}
+
+// 头部样式
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 24px;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1890ff;
+      margin-right: 24px;
+
+      .logo-icon {
+        margin-right: 8px;
+        font-size: 24px;
+      }
+    }
+
+    .breadcrumb {
+      margin-left: 16px;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .user-avatar {
+      cursor: pointer;
+
+      &:hover {
+        .ant-avatar {
+          box-shadow: 0 0 0 2px #1890ff;
+        }
+      }
+    }
+  }
+}
+
+// 侧边栏样式
+.app-sidebar {
+  .sidebar-header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #f0f0f0;
+
+    .sidebar-logo {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1890ff;
+    }
+  }
+
+  .ant-menu {
+    border-right: none;
+
+    .ant-menu-item {
+      margin: 4px 12px;
+      border-radius: 6px;
+
+      &:hover {
+        background: #e6f7ff;
+      }
+
+      &.ant-menu-item-selected {
+        background: #1890ff;
+        color: #fff;
+
+        .anticon {
+          color: #fff;
+        }
+      }
+    }
+
+    .ant-menu-submenu {
+      .ant-menu-submenu-title {
+        margin: 4px 12px;
+        border-radius: 6px;
+
+        &:hover {
+          background: #e6f7ff;
+        }
+      }
+    }
+  }
+}
+
+// 表单相关样式
+.smart-form {
+  .form-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+
+    .form-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #262626;
+    }
+
+    .form-description {
+      color: #8c8c8c;
+      font-size: 14px;
+    }
+  }
+
+  .form-body {
+    .form-field {
+      margin-bottom: 20px;
+
+      .field-label {
+        font-weight: 500;
+        margin-bottom: 6px;
+
+        .required-mark {
+          color: #ff4d4f;
+          margin-left: 2px;
+        }
+      }
+
+      .field-input {
+        position: relative;
+
+        .prediction-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: #fff;
+          border: 1px solid #d9d9d9;
+          border-top: none;
+          border-radius: 0 0 6px 6px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          z-index: 1000;
+          max-height: 200px;
+          overflow-y: auto;
+
+          .prediction-item {
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &:hover {
+              background: #f5f5f5;
+            }
+
+            &.selected {
+              background: #e6f7ff;
+              color: #1890ff;
+            }
+
+            .confidence-score {
+              font-size: 12px;
+              color: #8c8c8c;
+              background: #f0f0f0;
+              padding: 2px 6px;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .form-actions {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #f0f0f0;
+    text-align: right;
+
+    .ant-btn {
+      margin-left: 8px;
+    }
+  }
+}
+
+// 用户选择器样式
+.user-selector {
+  margin-bottom: 24px;
+
+  .user-select-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .ant-select {
+    width: 200px;
+  }
+}
+
+// 加载状态样式
+.loading-overlay {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+}
+
+// 错误状态样式
+.error-boundary {
+  padding: 48px 24px;
+  text-align: center;
+
+  .error-icon {
+    font-size: 64px;
+    color: #ff4d4f;
+    margin-bottom: 16px;
+  }
+
+  .error-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #262626;
+    margin-bottom: 8px;
+  }
+
+  .error-description {
+    color: #8c8c8c;
+    margin-bottom: 24px;
+  }
+}
+
+// 统计卡片样式
+.stats-card {
+  .ant-card-body {
+    padding: 20px;
+  }
+
+  .stats-content {
+    text-align: center;
+
+    .stats-value {
+      font-size: 32px;
+      font-weight: 600;
+      color: #1890ff;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .stats-label {
+      color: #8c8c8c;
+      font-size: 14px;
+    }
+  }
+}
+
+// 响应式适配
+@media (max-width: 768px) {
+  .app-layout {
+    .content-layout {
+      margin: 8px;
+
+      .main-content {
+        padding: 16px;
+      }
+    }
+  }
+
+  .app-header {
+    padding: 0 16px;
+
+    .header-left .logo {
+      font-size: 16px;
+
+      .logo-text {
+        display: none;
+      }
+    }
+  }
+
+  .smart-form {
+    .form-body {
+      .form-field {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

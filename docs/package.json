@@ -1,0 +1,17 @@
+{
+  "name": "@smart-form/docs",
+  "version": "1.0.0",
+  "description": "智能表单预测系统 - 项目文档",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "serve": "vitepress serve",
+    "clean": "rimraf dist .vitepress/cache"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0",
+    "vue": "^3.3.0",
+    "rimraf": "^5.0.0"
+  }
+}

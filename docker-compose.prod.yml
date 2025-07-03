@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    ports:
+      - '80:80'
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_API_URL=http://backend:3001
+    depends_on:
+      - backend
+    networks:
+      - smart-form-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    ports:
+      - '3001:3001'
+    volumes:
+      - ./data:/app/data # 持久化数据存储
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - CORS_ORIGIN=http://frontend
+      - DATA_PATH=/app/data
+    networks:
+      - smart-form-network
+    restart: unless-stopped
+
+networks:
+  smart-form-network:
+    driver: bridge
+
+volumes:
+  data_volume:

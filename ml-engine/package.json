@@ -1,0 +1,21 @@
+{
+  "name": "@smart-form/ml-engine",
+  "version": "1.0.0",
+  "description": "智能表单预测系统 - WASM机器学习引擎",
+  "private": true,
+  "scripts": {
+    "build": "wasm-pack build --target web --out-dir pkg",
+    "build:dev": "wasm-pack build --dev --target web --out-dir pkg",
+    "clean": "rimraf pkg target",
+    "test": "wasm-pack test --headless --chrome",
+    "test:firefox": "wasm-pack test --headless --firefox",
+    "publish": "wasm-pack publish"
+  },
+  "devDependencies": {
+    "wasm-pack": "^0.12.0",
+    "rimraf": "^5.0.0"
+  },
+  "files": [
+    "pkg/*"
+  ]
+}
